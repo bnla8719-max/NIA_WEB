@@ -46,7 +46,7 @@ NIA CORP,
 <meta property="og:title" content="니아에스앤디 | NIA S&D"/>
 <meta
 property="og:description"
-content="실내 스크린골프 전문 시공, 사옥 리모델링, 커뮤니티 및 상업·주거 인테리어"
+content="스크린골프 전문 시공, 사옥 리모델링, 커뮤니티 및 상업·주거 인테리어"
 />
 <meta property="og:url" content="https://niasnd.co.kr"/>
 <meta property="og:image" content="https://niasnd.co.kr/thumbnail.jpg"/>
@@ -1184,7 +1184,73 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 .blog-project-grid a:hover,.blog-project-grid a:focus-visible{border-color:var(--stone-light)}
 .blog-project-grid time{color:#cbc6bd;font-size:13px}
 </style>
-</head>
+<style>
+.review-section{padding:clamp(36px,6vw,84px) clamp(20px,5vw,65px);border-top:1px solid #343029;background:#191816}
+.review-section:nth-of-type(even){background:#141311}
+.review-inner{max-width:1220px;margin:auto}
+.review-inner>h2{font-size:clamp(26px,4vw,48px);letter-spacing:-.04em;margin:0 0 25px}
+.review-section figure,.review-portfolio figure{margin:0;background:#22201c}
+.review-section img,.review-portfolio img{display:block;width:100%;height:100%;object-fit:cover}
+.review-section h3,.review-portfolio h3{font-size:clamp(17px,2vw,23px);margin:0 0 6px}
+.review-section p,.review-section dd,.review-portfolio p{color:#c9c0b3;line-height:1.75}
+.review-section figcaption,.review-portfolio figcaption{padding:15px 19px 21px}
+.review-portfolio a{display:block;color:inherit;text-decoration:none}
+.review-portfolio a:hover{outline:1px solid #ae9875}
+.review-portfolio img,.review-work img{height:auto;aspect-ratio:16/10}
+.review-duo,.review-layout,.review-brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.review-layout{align-items:center;gap:clamp(20px,5vw,64px)}
+.review-layout>img{height:auto;aspect-ratio:4/3}
+.review-reverse>img{order:1}
+.review-brands{grid-template-columns:repeat(3,minmax(0,1fr))}
+.review-brands img{height:auto;object-fit:contain;background:#fff}
+.review-note{margin-top:16px;font-size:14px}
+.review-rows>div{padding:13px 0 17px;border-bottom:1px solid #423a30}
+.review-rows dt{color:#e3cfab;font-size:19px;font-weight:bold;margin-bottom:4px}
+.review-rows dd{margin:0}
+.review-timeline{list-style:none;counter-reset:review;margin:0;padding:0}
+.review-timeline li{counter-increment:review;border-top:1px solid #4a4134;padding:19px 0 19px 62px;position:relative}
+.review-timeline li:before{content:counter(review,decimal-leading-zero);position:absolute;left:5px;top:17px;font-size:24px;color:#c7ad83}
+.review-mosaic{display:grid;grid-template-columns:1.22fr 1fr;gap:15px}
+.review-mosaic figure:first-child{grid-row:span 2}
+.review-mosaic img{height:auto;aspect-ratio:2.15}
+.review-mosaic figure:first-child img{aspect-ratio:1.1;object-position:center}
+@media(max-width:680px){.review-duo,.review-layout,.review-brands,.review-mosaic{grid-template-columns:1fr}.review-reverse>img{order:0}.review-mosaic figure:first-child{grid-row:auto}.review-mosaic figure:first-child img{aspect-ratio:1.5}}
+</style>
+<style>
+#page-screengolf .review-section.golf-light{background:#eae4d9;color:#25221e;border-color:#dcd2c3}
+#page-screengolf .golf-light .partner-intro{color:#50483e;max-width:760px;margin-bottom:22px}
+.partner-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid #bdb09d}
+.partner-logos>div{display:grid;place-items:center;min-height:120px;padding:24px}
+.partner-logos>div+div{border-left:1px solid #ded7cc}
+.partner-logos img{max-width:158px;max-height:67px;object-fit:contain}
+#page-screengolf .review-section.golf-muted{background:#292724}
+.office-story{position:relative;isolation:isolate;padding:clamp(24px,5vw,66px);border:1px solid #51483b;background:#292621;overflow:hidden}
+.office-story>img{position:absolute;inset:0;z-index:-2;opacity:.23;object-fit:cover;object-position:70% 45%;filter:grayscale(1)}
+.office-story::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#211e19e8,#211e19b2 65%,#211e1930)}
+.office-story .review-rows{max-width:790px}
+.office-story .office-intro{max-width:790px;margin-bottom:20px;font-size:clamp(16px,2vw,20px);color:#ffffff}
+.office-editorial{display:grid;grid-template-columns:1.55fr 1fr;gap:18px}
+.office-editorial img{height:auto;aspect-ratio:16/10}
+.office-editorial figure:last-child img{object-position:center 45%}
+.office-gallery-caption{color:#c8bcaa;margin:0 0 12px}
+[data-gallery=office] .gallery-controls{justify-content:flex-end}
+[data-gallery=office] .gallery-frame{position:relative}
+.office-slide-label{position:absolute;inset:auto 0 0;text-align:left;padding:28px 16px 13px;background:linear-gradient(0deg,#161412f5,transparent);color:#fff;font-size:15px}
+@media(max-width:680px){
+ .office-editorial{grid-template-columns:1fr}
+ .partner-logos{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .partner-logos>div{min-height:90px;padding:16px}
+ .partner-logos>div:nth-child(3){border-left:0}
+ .partner-logos>div:nth-child(n+3){border-top:1px solid #ded7cc}
+}
+</style>
+<style>.practice-view img{height:auto;aspect-ratio:16/9}.review-section .practice-view figcaption{padding:8px 0 0;font-size:13px;color:#c9c0b3}.review-section .practice-view{background:transparent}</style><style>.office-service{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(22px,6vw,78px);align-items:start}.office-service h2{font-size:clamp(26px,3.8vw,44px);letter-spacing:-.04em;margin:0 0 14px}.office-service .review-rows{margin:0}@media(max-width:740px){.office-service{grid-template-columns:1fr}}</style><style>
+body {word-break:keep-all; line-break:strict; overflow-wrap:anywhere}
+h1,h2,h3,h4,dt,.hero-title,.sec-title,.dh-title,.biz-title,.p-title {text-wrap:balance}
+p,dd,figcaption,.biz-desc,.p-desc {text-wrap:pretty}
+.office-story .office-intro {margin-bottom:8px}
+.office-story .office-intro + .office-intro {margin-bottom:20px}
+</style></head>
 <body>
 <!-- ── NAV ── -->
 <nav id="navbar">
@@ -1280,7 +1346,7 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="biz-card-img"><img alt="스크린골프" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_screengolf_01.png"></div>
 <div class="biz-card-body">
 <div class="biz-num">01</div>
-<div class="biz-title">실내 스크린골프 전문 시공</div>
+<div class="biz-title">스크린골프 전문 시공</div>
 <div class="biz-desc">골프 장비 선정·설치부터 매장 인테리어까지</div>
 <div class="biz-arrow">자세히 →</div>
 </div>
@@ -1298,7 +1364,7 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="biz-card-img"><img alt="사옥 리모델링" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_office_02.png"></div>
 <div class="biz-card-body">
 <div class="biz-num">03</div>
-<div class="biz-title">회사 사옥 리모델링</div>
+<div class="biz-title">사옥 리모델링</div>
 <div class="biz-desc">맞춤 디자인·시공과 준공 자료 제공</div>
 <div class="biz-arrow">자세히 →</div>
 </div>
@@ -1334,17 +1400,10 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <p class="sec-label fu">Portfolio</p>
 <h2 class="sec-title fu fu-d1">공간의 결과로 증명합니다</h2>
 <p class="sec-sub fu fu-d2" style="margin-bottom:24px">다양한 프로젝트를 통해 축적된 경험으로 완성도 높은 공간을 만들어갑니다.</p>
-<div class="filter-tabs" id="mainFilter">
-<button class="f-tab active" onclick="filterMain('all',this)">ALL</button>
-<button class="f-tab" onclick="filterMain('office',this)">OFFICE</button>
-<button class="f-tab" onclick="filterMain('commercial',this)">COMMERCIAL</button>
-<button class="f-tab" onclick="filterMain('screengolf',this)">SCREEN GOLF</button>
-<button class="f-tab" onclick="filterMain('residential',this)">RESIDENTIAL</button>
-</div>
-<div class="port-grid" id="mainPortGrid">
-<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_office_01.png"/></div>
-<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_office_02.png"/></div>
-<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_office_03.png"/></div>
+<div class="review-duo review-work review-portfolio" id="blogProjects"><a href="https://blog.naver.com/nia_snd/224370092771"><figure><img loading="lazy" src="assets/review/6065921c3181a796.webp" alt="아머스포츠코리아 오피스 리뉴얼"><figcaption><h3>아머스포츠코리아 오피스 리뉴얼</h3><p>사옥·오피스</p></figcaption></figure></a><a href="https://blog.naver.com/nia_snd/224285356183"><figure><img loading="lazy" src="assets/review/74f3f7f01fcf5c75.webp" alt="송도 더샵 엑스포 스크린골프 리뉴얼"><figcaption><h3>송도 더샵 엑스포 스크린골프 리뉴얼</h3><p>스크린골프</p></figcaption></figure></a></div><div hidden><div class="port-grid" id="mainPortGrid">
+<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/b8e61203c6275ca7.webp" alt="대표실"></div>
+<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/302086b5c589b73e.webp" alt="업무공간"></div>
+<div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/cf60f4926ee0f585.webp" alt="회의실"></div>
 <div class="port-item show" data-cat="commercial" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_commercial_01.png"/></div>
 <div class="port-item show" data-cat="commercial" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_commercial_02.png"/></div>
 <div class="port-item show" data-cat="commercial" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_commercial_03.png"/></div>
@@ -1354,16 +1413,7 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="port-item show" data-cat="residential" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_residential_01.png"/></div>
 <div class="port-item show" data-cat="residential" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_residential_05.png"/></div>
 <div class="port-item show" data-cat="residential" onclick="openModal(this,'mainPortGrid')"><img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_residential_09.png"/></div>
-</div>
-<p class="fu" style="font-size:11px;color:rgba(250,250,248,0.25);margin-top:28px;letter-spacing:1px">
-</p>
-</div>
-<div class="blog-projects" aria-labelledby="blogProjectsTitle">
-<h3 id="blogProjectsTitle">네이버 블로그 시공사례</h3>
-<div class="blog-project-grid" id="blogProjects"></div>
-<a class="btn-outline" href="https://blog.naver.com/nia_snd" target="_blank" rel="noopener">네이버 블로그 더 보기 ↗</a>
-</div>
-</section>
+<div class="port-item show" data-cat="office"><img loading="lazy" src="assets/review/b259730a79f9a095.webp" alt="사업장 입구 디자인"></div></div></div></div></section>
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
 <div class="contact-inner">
@@ -1389,7 +1439,7 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="f-group"><label class="f-label">분야 *</label>
 <select class="f-select" name="field" required="">
 <option value="">선택하세요</option>
-<option>실내 스크린골프</option><option>커뮤니티</option><option>회사 사옥 리모델링</option><option>상업·주거 인테리어</option><option>기타</option>
+<option>실내 스크린골프</option><option>커뮤니티</option><option>사옥 리모델링</option><option>상업·주거 인테리어</option><option>기타</option>
 </select>
 </div>
 </div>
@@ -1485,19 +1535,14 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="detail-hero" style="height:60vh">
 <img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_screengolf_01.png"/>
 <div class="detail-hero-content"><div class="dh-num fu">01. Business</div>
-<h1 class="dh-title fu fu-d1">실내 스크린골프 전문 시공</h1><p class="dh-sub fu fu-d2">골프 장비 선정·설치부터 매장 설계와 인테리어 시공까지</p></div>
+<h1 class="dh-title fu fu-d1">스크린골프 전문 시공</h1><p class="dh-sub fu fu-d2">골프 장비 선정·설치부터 매장 설계와 인테리어 시공까지</p></div>
 </div>
-<div class="desc-block"><p class="fu">신규 스크린골프 매장과 기존 매장 리뉴얼을 모두 지원합니다. 현장 실측을 바탕으로 룸 수와 타석 배치, 고객 동선, 장비 설치 조건을 검토해 장비와 인테리어를 함께 제안합니다.</p></div>
-<section class="service-detail"><div class="com-slider-inner">
-<h2 class="sec-title">매장에 맞춘 장비와 공간 설계</h2><div class="service-grid"><article><p class="sec-label">Equipment</p><h3>브랜드별 장비 제안</h3><p>카카오VX 프렌즈 스크린, 보이스캐디 VSE, 골프존파크 등 브랜드별 장비를 검토합니다. 라운드 중심 스크린룸인지, 스윙 분석 중심 연습 타석인지에 따라 센서·분석 기능과 공간 요건을 비교합니다.</p></article><article><p class="sec-label">Design</p><h3>타석·스크린룸 배치</h3><p>천장고와 스윙에 필요한 공간, 타석 간격, 대기·이동 동선을 확인합니다. 장비 규격에 맞춰 전기·통신, 조명, 흡음 및 방음 계획을 함께 잡습니다.</p></article><article><p class="sec-label">Build</p><h3>인테리어 시공·장비 설치</h3><p>타석과 스크린룸, 카운터, 대기 공간까지 시공합니다. 공정에 맞춰 장비 설치를 조율하고 시운전과 최종 점검을 진행합니다.</p></article></div>
-</div></section>
-<div class="desc-block"><p>장비 모델과 설치 조건은 현장 여건 및 브랜드별 공급 조건에 따라 협의합니다.</p></div><section class="com-slider-section project-gallery" data-gallery="screengolf" aria-label="스크린골프 시공 사례">
+<section class="review-section "><div class="review-inner"><h2>장비와 시공을 함께 계획하면</h2><div class="review-layout"><img loading="lazy" src="assets/review/a58e4a9033d21629.webp" alt="기존 홈페이지 스크린골프 라운지 이미지"><dl class="review-rows"><div><dt>장비에 맞는 타석</dt><dd>장비 모델을 먼저 검토해 타석 폭, 스크린 거리, 센서·프로젝터 위치를 도면에 반영합니다.</dd></div><div><dt>설비 위치를 미리 확인</dt><dd>전원·통신과 조명 위치를 도면에 반영해 장비 설치 때 필요한 변경을 줄입니다.</dd></div><div><dt>기존 매장 리뉴얼</dt><dd>기존 장비와 바닥·전기 설비의 활용 여부에 따라 공사 범위를 제안합니다.</dd></div></dl></div></div></section><section class="review-section golf-light"><div class="review-inner"><h2>검증된 골프 장비 브랜드와 함께합니다</h2><p class="partner-intro">인지도와 장비 완성도를 갖춘 골프 장비 브랜드와 협력합니다. 공간에 맞는 장비 제안부터 설계·시공, 설치 조율까지 함께합니다.</p><div class="partner-logos"><div><img loading="lazy" src="assets/review/fa449cd47236e379.webp" alt="골프존파크"></div><div><img loading="lazy" src="assets/review/114d5c8716819cbf.webp" alt="카카오VX"></div><div><img loading="lazy" src="assets/review/0199d2b9cfb0b3e7.webp" alt="보이스캐디 VSE"></div><div><img loading="lazy" src="assets/review/e0f63a29c83b3d39.webp" alt="트랙맨"></div></div></div></section><section class="review-section golf-muted"><div class="review-inner"><h2>레슨·스윙 분석을 위한 연습 타석</h2><div class="review-layout"><figure class="practice-view"><img loading="lazy" src="assets/review/49437dfe13d550ce.webp" alt="낮은 칸막이로 나뉜 오픈형 타석 배치 예시"></figure><dl class="review-rows"><div><dt>장비 구성</dt><dd>스윙 영상과 샷 데이터를 중심으로 골프존 GDR Plus, 프렌즈스크린 아카데미, 보이스캐디 VSE, 트랙맨 등의 기능과 설치 환경을 비교합니다.</dd></div><div><dt>설계 기준</dt><dd>오픈형 타석 간격과 통행 동선을 확보합니다. 타석 도면에 우타·양타 스윙 여유 공간과 센서, 매트 위치를 구분해 반영합니다.</dd></div></dl></div></div></section><section class="review-section golf-muted"><div class="review-inner"><h2>라운드를 위한 독립형 스크린룸</h2><div class="review-layout review-reverse"><img loading="lazy" src="assets/review/6b8bce320c7cd633.webp" alt="기존 홈페이지 독립형 스크린룸 이미지"><dl class="review-rows"><div><dt>장비 구성</dt><dd>라운드 중심 시스템을 기준으로 화면 크기, 센서 방식, 스윙플레이트 적용 여부를 확인합니다.</dd></div><div><dt>설계 기준</dt><dd>룸의 층고·깊이와 스크린 거리를 확인한 뒤 흡음과 충격 완충을 계획합니다. 퀀텀 9X 적용 시에는 바닥 단차, 볼 공급기 점검구와 배선 경로까지 검토합니다.</dd></div></dl></div></div></section><section class="review-section "><div class="review-inner"><h2>현장 실측부터 시운전까지</h2><ol class="review-timeline"><li><h3>현장 실측</h3><p>층고와 기둥 위치, 스윙 공간, 전기·통신 인입, 환기 및 소음 조건을 확인합니다.</p></li><li><h3>장비 선정·타석 배치 제안</h3><p>라운드·연습·레슨 등 운영 목적에 맞춰 장비를 검토하고, 룸 수와 타석 방향, 이용객 동선을 제안합니다.</p></li><li><h3>도면 설계·견적 확정</h3><p>평면과 타석 단면, 조명·전기·통신 위치를 정리하고 마감재와 공사 범위를 협의합니다.</p></li><li><h3>골조·벽체 및 설비 공사</h3><p>필요 구간을 철거한 뒤 틀을 짜고 벽체를 세웁니다. 벽과 천장을 닫기 전에 배선·배관, 방음 구성을 점검합니다.</p></li><li><h3>조명·도장·타석 마감</h3><p>천장과 벽을 마감하고 조명과 도장을 진행합니다. 타석 주변에는 설계에 따라 흡음재와 메모리폼 등 충격 완충재를 적용하고 바닥과 타석 매트를 시공합니다.</p></li><li><h3>장비 설치·시운전</h3><p>스크린·센서·프로젝터를 설치하고 화면 정렬, 타구 인식, 조명 간섭, 네트워크를 확인합니다.</p></li></ol></div></section><section class="com-slider-section project-gallery" data-gallery="screengolf" aria-label="스크린골프 시공 사례">
 <div class="com-slider-inner">
 <p class="sec-label">Project</p><h2 class="sec-title">스크린골프 시공 사례</h2>
 <div class="gallery-controls"><div><button type="button" class="f-tab active" data-category="screengolf" aria-pressed="true">스크린골프</button></div><button type="button" class="f-tab gallery-toggle" aria-pressed="false">슬라이드 정지</button></div>
 <div class="gallery-window"><div class="gallery-track"></div></div>
-</div></section>
-<div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
+</div></section><div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
 </div><!-- /screengolf -->
 
 <!-- ════════════════════════════════
@@ -1575,19 +1620,20 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="detail-hero" style="height:60vh">
 <img alt="" src="https://raw.githubusercontent.com/bnla8719-max/nia/main/commercial_detail_office_02.png"/>
 <div class="detail-hero-content"><div class="dh-num fu">03. Business</div>
-<h1 class="dh-title fu fu-d1">회사 사옥 리모델링</h1><p class="dh-sub fu fu-d2">회사에 필요한 공간을 제안하고, 준공 후 관리에 필요한 자료까지 제공합니다</p></div>
+<h1 class="dh-title fu fu-d1">사옥 리모델링</h1><p class="dh-sub fu fu-d2">업무공간부터 리셉션과 공용부까지, 기업에 맞춘 설계·시공</p></div>
 </div>
-<div class="desc-block"><p class="fu">사옥 전체 리모델링부터 사무실, 회의실, 로비, 휴게 공간의 부분 공사까지 진행합니다. 현장 실측과 고객 미팅을 통해 조직의 업무 방식, 공간별 요구사항, 예산과 공사 일정을 확인합니다.</p></div>
-<section class="service-detail"><div class="com-slider-inner">
-<h2 class="sec-title">디자인 제안부터 준공 자료까지</h2><div class="service-grid"><article><p class="sec-label">Planning</p><h3>고객 요구에 맞춘 디자인 제안</h3><p>업무 인원과 좌석 배치, 회의·협업 방식, 방문객 동선을 검토해 레이아웃을 제안합니다. 기업 이미지에 맞춰 마감재와 색상, 조명 계획을 구체화합니다.</p></article><article><p class="sec-label">Construction</p><h3>현장 여건에 맞춘 시공</h3><p>업무 일정과 사용 중인 공간을 고려해 공사 구역과 공정 순서를 협의합니다. 공간별 마감과 설비를 점검하고 준공 시 고객과 함께 확인합니다.</p></article><article><p class="sec-label">Handover</p><h3>공사결과보고서와 스펙북 제공</h3><p>공사결과보고서에 공간별 작업 내용과 시공 전후 사진을 정리합니다. 스펙북에는 주요 마감재와 설치 제품의 모델명, 색상, 규격 등을 담아 유지관리에 활용할 수 있도록 제공합니다.</p></article></div>
-</div></section>
-<section class="com-slider-section project-gallery" data-gallery="office" aria-label="사옥·오피스 시공 사례">
+<section class="review-section office-planning"><div class="review-inner"><h2>업무 방식부터 마감까지, 사옥에 맞춰 설계합니다</h2><div class="office-story"><img loading="lazy" src="assets/review/6354ab49eb79900c.webp" alt="아머스포츠코리아 사무실 배치 도면"><p class="office-intro">사옥 전체 리모델링과 업무공간·회의실·대표실의 부분 공사를 진행합니다.</p><p class="office-intro">현장을 실측한 뒤 필요한 공사 범위를 제안합니다.</p><dl class="review-rows"><div><dt>업무 방식에 맞춘 디자인</dt><dd>인원과 좌석 배치, 팀 간 협업 방식, 방문객 동선을 검토해 평면을 제안합니다. 기업 이미지와 공간 용도에 맞춰 조명, 컬러, 마감재를 구체화합니다.</dd></div><div><dt>현장 여건에 맞춘 시공</dt><dd>업무가 이어지는 현장은 사용 중인 구역과 공사 구역을 나누고, 소음·분진이 큰 공정과 작업 시간을 협의합니다.</dd></div><div><dt>준공 시 확인할 내용</dt><dd>고객과 공간별 마감과 설비를 점검하고, 공사결과보고서와 주요 마감재·설치 제품의 규격을 정리한 스펙북을 제공합니다.</dd></div></dl></div></div></section><section class="review-section "><div class="review-inner"><div class="office-service">
+<div><h2>사옥 전체·부분 리모델링</h2><p>사옥 이전이나 기존 공간 개선을 계획 중이신가요? 사용 인원과 입주 일정, 예산에 맞춰 공사 범위를 제안합니다.</p></div>
+<dl class="review-rows">
+<div><dt>사옥 이전·전체 리모델링</dt><dd>업무공간과 회의실, 공용부를 함께 계획합니다.<br>부서 간 이동과 방문객 동선에 맞춰 조명·마감과 전기·통신 위치를 정합니다.</dd></div>
+<div><dt>업무공간 부분 개선</dt><dd>회의실 증설, 좌석 재배치, 수납 확충 등 필요한 공간부터 개선합니다.<br>기존 시설과 마감의 재사용 여부도 살핍니다.</dd></div>
+<div><dt>기업 이미지를 담는 첫인상</dt><dd>방문객 동선에 맞춰 안내 데스크와 기업 사인을 배치합니다.<br>브랜드 컬러와 마감재를 로비부터 내부까지 연결합니다.</dd></div>
+</dl></div></div></section><section class="com-slider-section project-gallery" data-gallery="office" aria-label="공간 디자인 갤러리">
 <div class="com-slider-inner">
-<p class="sec-label">Project</p><h2 class="sec-title">사옥·오피스 시공 사례</h2>
-<div class="gallery-controls"><div><button type="button" class="f-tab active" data-category="office" aria-pressed="true">사옥·오피스</button></div><button type="button" class="f-tab gallery-toggle" aria-pressed="false">슬라이드 정지</button></div>
-<div class="gallery-window"><div class="gallery-track"></div></div>
-</div></section>
-<div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
+<h2 class="sec-title">공간 디자인 갤러리</h2>
+<div class="gallery-controls"><button type="button" class="f-tab gallery-toggle" aria-pressed="false">슬라이드 정지</button></div>
+<p class="office-gallery-caption">업무공간 · 대표실 · 회의실 · 사업장 외관</p><div class="gallery-window"><div class="gallery-track"></div></div>
+</div></section><div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
 </div><!-- /office -->
 <!-- ════════════════════════════════
      COMMERCIAL PAGE
@@ -1598,17 +1644,12 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div class="detail-hero-content"><div class="dh-num fu">04. Business</div>
 <h1 class="dh-title fu fu-d1">상업·주거 인테리어</h1><p class="dh-sub fu fu-d2">매장·상가부터 주택·아파트까지, 공간의 쓰임에 맞춘 설계와 시공</p></div>
 </div>
-<div class="desc-block"><p class="fu">매장의 브랜드와 고객 동선, 주거 공간의 생활 방식과 수납 요구를 살펴 목적에 맞는 평면과 마감 계획을 제안합니다.</p></div>
-<section class="service-detail"><div class="com-slider-inner">
-<h2 class="sec-title">공간 유형별 인테리어</h2><div class="service-grid"><article><p class="sec-label">Commercial</p><h3>매장·상가 인테리어</h3><p>매장, 카페, 음식점 등 업종별로 고객과 직원의 동선, 진열·서비스 공간, 조명과 마감재를 계획합니다.</p></article><article><p class="sec-label">Residential</p><h3>주택·아파트 인테리어</h3><p>가족 구성과 생활 습관에 맞춰 공간 배치, 수납, 조명, 마감재를 제안합니다. 전체 리모델링과 필요한 공간의 부분 공사를 함께 검토합니다.</p></article></div>
-</div></section>
-<section class="com-slider-section project-gallery" data-gallery="commercial" aria-label="상업·주거 시공 사례">
+<section class="review-section "><div class="review-inner"><h2>매장·상가 인테리어</h2><div class="review-layout"><img loading="lazy" src="assets/review/245fe570930a2bba.webp" alt="상업 공간 이미지"><dl class="review-rows"><div><dt>고객이 들어와 머무는 흐름</dt><dd>카페, 음식점, 쇼룸의 주문·대기·진열 동선을 업종에 맞게 설계합니다.</dd></div><div><dt>브랜드를 보여주는 마감</dt><dd>조명과 재료, 카운터와 진열대의 위치를 함께 정리해 매장의 인상을 만듭니다.</dd></div></dl></div></div></section><section class="review-section "><div class="review-inner"><h2>주택·아파트 인테리어</h2><div class="review-layout review-reverse"><img loading="lazy" src="assets/review/58482e3410a6cbb0.webp" alt="주거 공간 이미지"><dl class="review-rows"><div><dt>생활 방식에 맞는 배치</dt><dd>거실과 주방, 침실을 사용하는 방식에 맞춰 수납과 조명 배치를 검토합니다.</dd></div><div><dt>부분 공사부터 전체 리모델링까지</dt><dd>기존 마감과 설비 상태를 확인하고 필요한 범위를 협의합니다.</dd></div></dl></div></div></section><section class="com-slider-section project-gallery" data-gallery="commercial" aria-label="상업·주거 시공 사례">
 <div class="com-slider-inner">
 <p class="sec-label">Project</p><h2 class="sec-title">상업·주거 시공 사례</h2>
 <div class="gallery-controls"><div><button type="button" class="f-tab active" data-category="all" aria-pressed="true">전체</button><button type="button" class="f-tab" data-category="commercial" aria-pressed="false">상업</button><button type="button" class="f-tab" data-category="residential" aria-pressed="false">주거</button></div><button type="button" class="f-tab gallery-toggle" aria-pressed="false">슬라이드 정지</button></div>
 <div class="gallery-window"><div class="gallery-track"></div></div>
-</div></section>
-<div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
+</div></section><div class="cta-strip"><button class="btn-stone" onclick="goTo('main','contact')">프로젝트 문의하기</button></div>
 </div><!-- /commercial -->
 <!-- MODAL -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -1627,9 +1668,9 @@ input,textarea,select,option,[contenteditable="true"]{-webkit-user-select:text !
 <div>
 <p class="foot-head">Business</p>
 <ul class="foot-links">
-<li><a onclick="goTo('screengolf')">실내 스크린골프 전문 시공</a></li>
+<li><a onclick="goTo('screengolf')">스크린골프 전문 시공</a></li>
 <li><a onclick="goTo('community')">커뮤니티 시설</a></li>
-<li><a onclick="goTo('office')">회사 사옥 리모델링</a></li>
+<li><a onclick="goTo('office')">사옥 리모델링</a></li>
 <li><a onclick="goTo('commercial')">상업·주거 인테리어</a></li>
 </ul>
 </div>
@@ -2313,19 +2354,20 @@ function initProjectGallery(page) {
   function render(category) {
     const photos = [...document.querySelectorAll('#mainPortGrid [data-cat]')]
       .filter(item => allowed.includes(item.dataset.cat) && (category === 'all' || item.dataset.cat === category))
-      .map(item => item.querySelector('img').src);
+      .map(item => { const img = item.querySelector('img'); return {src: img.src, label: img.alt}; });
     const group = document.createElement('div');
     group.className = 'gallery-group';
 
-    photos.forEach((src, index) => {
+    photos.forEach(({src, label}, index) => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'gallery-frame';
-      button.setAttribute('aria-label', (index + 1) + '번 시공 사진 확대');
+      button.setAttribute('aria-label', (label || (index + 1) + '번 사진') + ' 확대');
       const photo = new Image();
       photo.alt = '';
       photo.src = src;
       button.append(photo);
+      if (page === 'office' && label) { const caption = document.createElement('span'); caption.className = 'office-slide-label'; caption.textContent = label; button.append(caption); }
       button.addEventListener('click', () => openModalSrc(src));
       group.append(button);
     });
@@ -2334,7 +2376,7 @@ function initProjectGallery(page) {
     loop.setAttribute('aria-hidden', 'true');
     [...loop.children].forEach((button, index) => {
       button.tabIndex = -1;
-      button.addEventListener('click', () => openModalSrc(photos[index]));
+      button.addEventListener('click', () => openModalSrc(photos[index].src));
     });
     track.replaceChildren(group, loop);
     track.style.setProperty('--gallery-duration', Math.max(20, photos.length * 7) + 's');
@@ -2353,36 +2395,41 @@ function initProjectGallery(page) {
     toggle.setAttribute('aria-pressed', String(paused));
     toggle.textContent = paused ? '슬라이드 재생' : '슬라이드 정지';
   });
-  render(categories[0].dataset.category);
+  render(categories[0]?.dataset.category || page);
 }
 
 async function loadBlogProjects() {
   const grid = document.getElementById('blogProjects');
-  function render(posts) {
-    if (!Array.isArray(posts)) return;
-    const cards = posts.slice(0, 6).flatMap(post => {
-      if (!post || !/^https:\/\/blog\.naver\.com\/nia_snd\/\d+$/.test(post.url) || typeof post.title !== 'string') return [];
-      const link = document.createElement('a');
-      link.href = post.url;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      const title = document.createElement('h4');
-      title.textContent = post.title;
-      const date = document.createElement('time');
-      date.dateTime = post.date;
-      date.textContent = post.date;
-      link.append(title, date);
-      return [link];
-    });
-    grid.replaceChildren(...cards);
-  }
-
-  render([{"title": "아머스포츠코리아 사무실 리뉴얼 프로젝트", "url": "https://blog.naver.com/nia_snd/224370092771", "date": "2026-08-06"}, {"title": "인천_118평_송도 더샾 엑스포 커뮤니티 스크린골프 인테리어", "url": "https://blog.naver.com/nia_snd/224285356183", "date": "2026-05-14"}]);
   try {
     const response = await fetch('https://raw.githubusercontent.com/bnla8719-max/NIA_WEB/main/blog-portfolio.json', {signal: AbortSignal.timeout(5500)});
-    if (response.ok) render(await response.json());
+    if (!response.ok) return;
+    const posts = await response.json();
+    const cards = posts.slice(0, 6).flatMap(post => {
+      if (!/^https:\/\/blog\.naver\.com\/nia_snd\/\d+$/.test(post.url) || typeof post.title !== 'string') return [];
+      const link = document.createElement('a');
+      link.href = post.url;
+      const figure = document.createElement('figure');
+      if (/^(assets\/review\/[a-f0-9]+\.webp|https:\/\/[a-z0-9.-]+\.pstatic\.net\/)/i.test(post.image || '')) {
+        const image = new Image();
+        image.src = post.image;
+        image.alt = '';
+        image.loading = 'lazy';
+        image.addEventListener('error', () => image.remove());
+        figure.append(image);
+      }
+      const caption = document.createElement('figcaption');
+      const title = document.createElement('h3');
+      title.textContent = post.display_title || post.title;
+      const label = document.createElement('p');
+      label.textContent = post.category || post.date;
+      caption.append(title, label);
+      figure.append(caption);
+      link.append(figure);
+      return [link];
+    });
+    if (cards.length) grid.replaceChildren(...cards);
   } catch {
-    // Keep the bundled portfolio entries when the feed is temporarily unavailable.
+    // Keep the gallery rendered in the page if the feed is unavailable.
   }
 }
 loadBlogProjects();
