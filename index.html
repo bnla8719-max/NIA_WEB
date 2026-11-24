@@ -1400,7 +1400,7 @@ p,dd,figcaption,.biz-desc,.p-desc {text-wrap:pretty}
 <p class="sec-label fu">Portfolio</p>
 <h2 class="sec-title fu fu-d1">공간의 결과로 증명합니다</h2>
 <p class="sec-sub fu fu-d2" style="margin-bottom:24px">다양한 프로젝트를 통해 축적된 경험으로 완성도 높은 공간을 만들어갑니다.</p>
-<div class="review-duo review-work review-portfolio" id="blogProjects"><a href="https://blog.naver.com/nia_snd/224370092771"><figure><img loading="lazy" src="assets/review/6065921c3181a796.webp" alt="아머스포츠코리아 오피스 리뉴얼"><figcaption><h3>아머스포츠코리아 오피스 리뉴얼</h3><p>사옥·오피스</p></figcaption></figure></a><a href="https://blog.naver.com/nia_snd/224285356183"><figure><img loading="lazy" src="assets/review/74f3f7f01fcf5c75.webp" alt="송도 더샵 엑스포 스크린골프 리뉴얼"><figcaption><h3>송도 더샵 엑스포 스크린골프 리뉴얼</h3><p>스크린골프</p></figcaption></figure></a></div><div hidden><div class="port-grid" id="mainPortGrid">
+<div class="review-duo review-work review-portfolio" id="blogProjects"><a href="https://blog.naver.com/nia_snd/224370092771"><figure><img loading="lazy" src="assets/review/6065921c3181a796.webp" alt="아머스포츠코리아 오피스 리뉴얼"><figcaption><h3>아머스포츠코리아 오피스 리뉴얼</h3><p>사옥·오피스</p></figcaption></figure></a><a href="https://blog.naver.com/nia_snd/224285356183"><figure><img loading="lazy" src="assets/review/74f3f7f01fcf5c75.webp" alt="송도 더샵 엑스포 스크린골프 리뉴얼"><figcaption><h3>송도 더샵 엑스포 스크린골프 리뉴얼</h3><p>커뮤니티</p></figcaption></figure></a></div><div hidden><div class="port-grid" id="mainPortGrid">
 <div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/b8e61203c6275ca7.webp" alt="대표실"></div>
 <div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/302086b5c589b73e.webp" alt="업무공간"></div>
 <div class="port-item show" data-cat="office" onclick="openModal(this,'mainPortGrid')"><img loading="lazy" src="assets/review/cf60f4926ee0f585.webp" alt="회의실"></div>
@@ -2423,9 +2423,12 @@ async function loadBlogProjects() {
       const caption = document.createElement('figcaption');
       const title = document.createElement('h3');
       title.textContent = post.display_title || post.title;
-      const label = document.createElement('p');
-      label.textContent = post.category || '시공사례';
-      caption.append(title, label);
+      caption.append(title);
+      if (post.category && post.category !== '시공사례') {
+        const label = document.createElement('p');
+        label.textContent = post.category;
+        caption.append(label);
+      }
       figure.append(caption);
       link.append(figure);
       return [link];

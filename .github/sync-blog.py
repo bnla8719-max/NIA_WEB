@@ -12,8 +12,8 @@ FEED = 'https://rss.blog.naver.com/nia_snd.xml'
 CATEGORIES = {'portfolio', '시공사례', '포트폴리오'}
 PROJECT_TYPES = (
     ('사옥·오피스', ('지주간판', '간판', '외부사인', '사인물')),
-    ('스크린골프', ('스크린골프', '골프연습장')),
     ('커뮤니티', ('커뮤니티',)),
+    ('스크린골프', ('스크린골프', '골프연습장')),
     ('사옥·오피스', ('사무실', '오피스', '사옥')),
     ('상업공간', ('상업공간', '매장', '카페')),
     ('주거공간', ('주거공간', '주택', '아파트')),
@@ -28,7 +28,7 @@ def project_category(title):
     for label, keywords in PROJECT_TYPES:
         if any(keyword in normalized for keyword in keywords):
             return label
-    return '시공사례'
+    return None
 
 
 def portfolio_posts(payload):
@@ -48,9 +48,11 @@ def portfolio_posts(payload):
         if not match or not title:
             continue
         date = parsedate_to_datetime(item.findtext('pubDate')).date().isoformat()
+        category = project_category(title)
         posts.append({
             'title': title, 'url': 'https://blog.naver.com/nia_snd/' + match[1],
-            'date': date, 'category': project_category(title),
+            'date': date,
+            **({'category': category} if category else {}),
         })
     return posts
 
