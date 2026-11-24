@@ -2401,7 +2401,8 @@ function initProjectGallery(page) {
 async function loadBlogProjects() {
   const grid = document.getElementById('blogProjects');
   try {
-    const response = await fetch('https://raw.githubusercontent.com/bnla8719-max/NIA_WEB/main/blog-portfolio.json', {signal: AbortSignal.timeout(5500)});
+    const feedUrl = 'https://raw.githubusercontent.com/bnla8719-max/NIA_WEB/main/blog-portfolio.json';
+    const response = await fetch(feedUrl, {signal: AbortSignal.timeout(5500)});
     if (!response.ok) return;
     const posts = await response.json();
     const cards = posts.slice(0, 6).flatMap(post => {
@@ -2409,9 +2410,11 @@ async function loadBlogProjects() {
       const link = document.createElement('a');
       link.href = post.url;
       const figure = document.createElement('figure');
-      if (/^(assets\/review\/[a-f0-9]+\.webp|https:\/\/[a-z0-9.-]+\.pstatic\.net\/)/i.test(post.image || '')) {
+      if (/^(assets\/review\/[a-f0-9]+\.webp|assets\/blog-portfolio\/\d+-[a-f0-9]{12}\.(?:jpg|png|webp|gif)|https:\/\/[a-z0-9.-]+\.pstatic\.net\/)/i.test(post.image || '')) {
         const image = new Image();
-        image.src = post.image;
+        image.src = post.image.startsWith('assets/blog-portfolio/')
+          ? new URL(post.image, feedUrl).href
+          : post.image;
         image.alt = '';
         image.loading = 'lazy';
         image.addEventListener('error', () => image.remove());
@@ -2421,7 +2424,7 @@ async function loadBlogProjects() {
       const title = document.createElement('h3');
       title.textContent = post.display_title || post.title;
       const label = document.createElement('p');
-      label.textContent = post.category || post.date;
+      label.textContent = post.category || '시공사례';
       caption.append(title, label);
       figure.append(caption);
       link.append(figure);
