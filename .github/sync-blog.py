@@ -11,7 +11,7 @@ from xml.etree import ElementTree
 FEED = 'https://rss.blog.naver.com/nia_snd.xml'
 CATEGORIES = {'portfolio', '시공사례', '포트폴리오'}
 PROJECT_TYPES = (
-    ('외부 사인', ('지주간판', '간판', '외부사인', '사인물')),
+    ('사옥·오피스', ('지주간판', '간판', '외부사인', '사인물')),
     ('스크린골프', ('스크린골프', '골프연습장')),
     ('커뮤니티', ('커뮤니티',)),
     ('사옥·오피스', ('사무실', '오피스', '사옥')),
