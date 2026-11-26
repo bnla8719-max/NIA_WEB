@@ -9,26 +9,16 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree
 
 FEED = 'https://rss.blog.naver.com/nia_snd.xml'
-CATEGORIES = {'portfolio', '시공사례', '포트폴리오'}
-PROJECT_TYPES = (
-    ('사옥·오피스', ('지주간판', '간판', '외부사인', '사인물')),
-    ('커뮤니티', ('커뮤니티',)),
-    ('스크린골프', ('스크린골프', '골프연습장')),
-    ('사옥·오피스', ('사무실', '오피스', '사옥')),
-    ('상업공간', ('상업공간', '매장', '카페')),
-    ('주거공간', ('주거공간', '주택', '아파트')),
-)
+CATEGORIES = {
+    '스크린골프': '스크린골프',
+    '아파트커뮤니티': '아파트커뮤니티',
+    '사옥·오피스': '사옥 · 오피스',
+    '상업공간': '상업공간',
+    '주거공간': '주거공간',
+}
 IMAGE_TYPES = {'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif'}
 MAX_IMAGE_BYTES = 2_000_000
 IMAGE_DIR = Path('assets/blog-portfolio')
-
-
-def project_category(title):
-    normalized = re.sub(r'\s+', '', title)
-    for label, keywords in PROJECT_TYPES:
-        if any(keyword in normalized for keyword in keywords):
-            return label
-    return None
 
 
 def portfolio_posts(payload):
@@ -38,9 +28,12 @@ def portfolio_posts(payload):
 
     posts = []
     for item in channel.findall('item'):
-        categories = {re.sub(r'\s+', '', category.text or '').casefold()
-                      for category in item.findall('category')}
-        if not CATEGORIES.intersection(categories):
+        category = next((
+            CATEGORIES[key]
+            for node in item.findall('category')
+            if (key := re.sub(r'\s+', '', node.text or '')) in CATEGORIES
+        ), None)
+        if category is None:
             continue
         link = (item.findtext('guid') or item.findtext('link') or '').strip()
         match = re.fullmatch(r'https://(?:m\.)?blog\.naver\.com/nia_snd/(\d+)(?:\?[^#]*)?', link)
@@ -48,11 +41,10 @@ def portfolio_posts(payload):
         if not match or not title:
             continue
         date = parsedate_to_datetime(item.findtext('pubDate')).date().isoformat()
-        category = project_category(title)
         posts.append({
             'title': title, 'url': 'https://blog.naver.com/nia_snd/' + match[1],
             'date': date,
-            **({'category': category} if category else {}),
+            'category': category,
         })
     return posts
 
@@ -106,6 +98,8 @@ if __name__ == '__main__':
     request = Request(FEED, headers={'User-Agent': 'NIA-SND-Portfolio-Sync/1.0'})
     with urlopen(request, timeout=20) as response:
         posts = portfolio_posts(response.read(2_000_000))
+    if not posts:
+        raise SystemExit('No portfolio categories found in RSS. Keeping the existing feed and images.')
     path = Path('blog-portfolio.json')
     combined = {post['url']: post for post in posts}
     latest = sorted(combined.values(), key=lambda post: (post['date'], int(post['url'].rsplit('/', 1)[1])), reverse=True)
